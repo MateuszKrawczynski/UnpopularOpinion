@@ -1,0 +1,30 @@
+<html lang="en">
+<%- include("./particles/head.ejs"); %>
+<body>
+    <%- include("./particles/maintext.ejs"); %>
+    <style>
+        .input{
+            border-radius:15px;
+            color:crimson;
+            background-color:white;
+            border-color:crimson;
+            font-size:20px;
+            width:100%;
+            height:auto;
+            padding:15px;
+            border-style:groove;
+        }
+        .input:focus{
+            background-color: rgb(168, 215, 242);
+        }
+    </style>
+    <center>
+        <form action="/create" method="post">
+            <input name="title" type=text class="input" placeholder="Title of your opinion..." required/> <br><br>
+            <textarea name="content" rows=24 class="input" type="text" name="content" placeholder="Type your opinion here..." required></textarea><br><br>
+            <button>Publish!</button>
+            <p><%= backend %></p>
+        </form>
+    </center>
+</body>
+</html>

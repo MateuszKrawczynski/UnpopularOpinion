@@ -1,0 +1,23 @@
+<html lang="en">
+<%- include("./particles/head.ejs"); %>
+<style>
+    .element{
+        border-style:solid;
+        border-color:red;
+        color:crimson;
+    }
+</style>
+<body>
+    <%- include("./particles/maintext.ejs"); %>
+    <center>
+        <a href="/like/<%= id %>"><img src="/public/like.png"/>: <%= data.likes %></a>
+        <a href="/dislike/<%= id %>"><img src="/public/dislike.png"/>: <%= data.comments %></a>
+        
+       <h1>Opinion: <%- data.title.replace(/(\r\n|\r|\n)/g, '<br>');
+ %></h1>
+       <h3><%- data.content.replace(/(\r\n|\r|\n)/g, '<br>');
+ %></h3>
+       
+    </center>
+</body>
+</html>

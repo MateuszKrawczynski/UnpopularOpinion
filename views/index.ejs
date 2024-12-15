@@ -1,0 +1,26 @@
+<html lang="en">
+<%- include("./particles/head.ejs"); %>
+<style>
+    .element{
+        border-style:solid;
+        border-color:red;
+        color:crimson;
+    }
+</style>
+<body>
+    <%- include("./particles/maintext.ejs"); %>
+    <center>
+        <a href="/create"><button>+ Add your anonymous opinion</button></a>
+        <h2>OPINIONS:</h2>
+        <div>
+            <% data.forEach((element) => { %>
+                <a  href="/read/<%= element.title %>">
+                    <div class="element">
+                    <h2 ><%= element.title %></h2>
+                    <h2><img src="/public/like.png"/>: <%= element.likes %>  <img src="/public/dislike.png"/>: <%= element.comments %></h2></div>
+                </a>
+            <% }) %>
+        </div>
+    </center>
+</body>
+</html>
